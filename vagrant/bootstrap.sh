@@ -4,6 +4,9 @@
 echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add -
 
+# update apt
+apt-get update
+
 #add pgbadger PPA
 apt-get -y -q install python-software-properties
 apt-add-repository -y ppa:pgbadger/stable
@@ -24,6 +27,11 @@ apt-get -y -q install pgbadger
 # install alternate editor and tmux
 apt-get -y -q install joe
 apt-get -y -q install tmux
+
+# install stuff
+apt-get -y -q install vim
+apt-get -y -q install git-core
+apt-get -y -q install mc 
 
 /setup/dbprep.sh
 
